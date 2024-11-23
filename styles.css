@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container>canvas {
+  position: absolute;
+}
+
+.toolbar {
+  position: absolute;
+  width: 90px;
+  height: 100%;
+  background-color: #333;
+  transition: transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.left-toolbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-toolbar li {
+  margin: 15px 0;
+}
+
+.left-toolbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.left-toolbar a:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.right-toolbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right-toolbar li {
+  margin: 15px 0;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-toolbar label {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.right-toolbar input[type="number"] {
+  width: 35px;
+  padding: 5px;
+  font-size: 10px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #444;
+  color: #fff;
+}
+
+.right-toolbar input[type="checkbox"] {
+  margin: 5px 0;
+}
+
+.right-toolbar input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+/* Hover effect for inputs */
+.right-toolbar input:hover {
+  border-color: #777;
+  background-color: #555;
+}
+
+/* Add some spacing to the toolbar items */
+.right-toolbar li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* Handle styles for easy targeting */
+.handle {
+  width: 10px;
+  height: 100px;
+  background-color: #555;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left .handle {
+  right: -10px;
+  /* Sticks out on the right side of left toolbar */
+}
+
+.right .handle {
+  left: -10px;
+  /* Sticks out on the left side of right toolbar */
+}
